@@ -130,6 +130,18 @@ async function boot() {
   // (AudioContext may still be locked until the user clicks/presses a key.)
   soundManager = new SoundManager();
 
+ soundManager.load("jump", "assets/sfx/jump.wav");
+ soundManager.load("hitEnemy", "assets/sfx/hitEnemy.wav");
+ soundManager.load("leafCollect", "assets/sfx/leafCollect.wav");
+ soundManager.load("receiveDamage", "assets/sfx/receiveDamage.wav");
+ soundManager.load("music", "assets/sfx/music.wav");
+
+
+const music = soundManager.sfx["music"];
+  music.setLoop(true);
+  music.setVolume(0.2);
+
+
   // --- Parallax layer defs (VIEW) ---
   const defs = levelPkg.level?.view?.parallax ?? [];
   parallaxLayers = defs
@@ -304,10 +316,20 @@ function draw() {
 
 function mousePressed() {
   unlockAudioOnce();
+
+  const music = soundManager?.sfx["music"];
+  if (music && !music.isPlaying()) {
+    music.play();
+  }
 }
 
 function keyPressed(evt) {
   unlockAudioOnce();
+  
+  const music = soundManager?.sfx["music"];
+  if (music && !music.isPlaying()) {
+    music.play();
+  }
 
     if (evt.key === "x") {
     debugOverlay.enabled = !debugOverlay.enabled;

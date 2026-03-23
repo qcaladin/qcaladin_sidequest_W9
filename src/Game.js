@@ -78,6 +78,23 @@ export class Game {
     const levelId = this._levelId();
     this.bestMs = this.highScores.getBestTime?.(levelId) ?? null;
 
+
+    this.events.on("player:jump", () => {
+    this.sound.play("jump");
+    });
+
+    this.events.on("leaf:collected", () => {
+    this.sound.play("leafCollect");
+    });
+
+    this.events.on("player:damaged", () => {
+    this.sound.play("receiveDamage");
+    });
+
+    this.events.on("enemy:hit", () => {
+    this.sound.play("hitEnemy");
+    });
+
     this._wireEventListeners();
     return this;
   }
