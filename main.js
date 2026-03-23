@@ -277,6 +277,12 @@ function draw() {
     },
   });
 
+
+  debugOverlay?.draw({
+    game,
+    camera,
+  });
+
   // -----------------------------
   // VIEW flow gates
   // -----------------------------
@@ -302,6 +308,10 @@ function mousePressed() {
 
 function keyPressed(evt) {
   unlockAudioOnce();
+
+    if (evt.key === "x") {
+    debugOverlay.enabled = !debugOverlay.enabled;
+  }
   return preventKeysThatScroll(evt);
 }
 
