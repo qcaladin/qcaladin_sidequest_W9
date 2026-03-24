@@ -1,6 +1,6 @@
 ## Project Title
 
-GBDA302 Week 6: Blob Rescue
+GBDA302 Week 9: Blob Rescue with Debug Screen
 
 ---
 
@@ -12,7 +12,7 @@ Queene Calading | qcaladin | 21094601
 
 ## Description
 
-This matches the structure of the original game from week 6 example 5, but with changes in background, and characters. Save the blobs and get rid of enemy blocking your path
+This matches the structure of the original game from week 6 example 5, but with changes in background, and characters. Save the blobs and get rid of enemy blocking your path, as well as updated debug screen as per sidequest 9 instructions
 
 ---
 
@@ -20,6 +20,7 @@ This matches the structure of the original game from week 6 example 5, but with 
 
 Press A/D or ←/→ to move Left/Right Press W/S or ↑/ ↓ to move Up/Down
 Press Space to attack / hit the enemy
+Press X to toggle debug overlay
 
 ---
 
